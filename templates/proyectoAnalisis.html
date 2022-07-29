@@ -1,0 +1,67 @@
+
+{% extends 'base.html' %}
+{% block title %} Análisis {% endblock %}
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 style="font-family:Impact,sans-serif;">Estadísticas Acerca del Valor de la Criptomoneda "Bitcoin".</h1>
+    </div>
+</div>
+<hr>
+<br>
+<div class="card-group">
+    <div class="card cards">
+      <img src="data:image/png;base64,{{imagen1}}" class="card-img-top" alt="Grafica por fecha">
+      <div class="card-body" align="justify">
+        <h5 class="card-title" style="font-family:Impact,sans-serif;">Valor del Bitcoin en el Mercado por Fecha.</h5>
+        <p class="card-text">Si en enero de 2010 hubieses comprado 100 € de bitcoins y vendido en noviembre de 
+          2013, el valor hubiera sido de 120.000.000 €. No está nada mal ¿verdad? Pasar de 100€ a 120 millones 
+          de euros, en tan solo 3 años. Y todo ello con una inversión de risa, parece un sueño. Pero la verdad 
+          es que con bitcoin y sus subidas de precio ha sido posible. De hecho, en 2021 bitcoin ha logrado romper 
+          la barrera de los 60.000 US$.</p>
+          <br><br><br><br>
+        <center>
+          <button class="boton" OnClick="location.href='/FrecuenciaFecha'" type="button">Ver Estadística</button>
+        </center>
+      </div>
+    </div>
+
+
+    <div class="card cards">
+      <img src="data:image/png;base64,{{imagen2}}" class="card-img-top" alt="Grafica por fecha">
+      <div class="card-body" align="justify">
+        <h5 class="card-title" style="font-family:Impact,sans-serif;">Frecuencia del Valor del Bitcoin en el Mercado.</h5>
+        <p class="card-text">El valor de un Bitcoin lo determina todo aquel que quiera participar en su proceso de 
+          compraventa, en esencia sus usuarios. Aunque influyan múltiples factores, en última instancia, siempre 
+          determina su precio. El comercio de bitcoins permite distribuirlo y beneficiarse por ello. Como en otros 
+          escenarios, los productores (en el caso de Bitcoin: los mineros) pueden proponer un precio al vender sus 
+          bitcoins a los interesados llegando a acuerdos. Imagina los típicos tratos entre dos personas, una 
+          propone un precio y si la otra, entre regateos, está dispuesto a aceptarlo entonces se hace la 
+          transacción.</p>
+        <center>
+          <button class="boton" OnClick="location.href='/Preciomercado'" type="button"> Ver Estadística </button>
+        </center>
+      </div>
+    </div>
+
+
+    <div class="card cards">
+      <img src="data:image/png;base64,{{imagen3}}" class="card-img-top" alt="Grafica por fecha">
+      <div class="card-body" align="justify">
+        <h5 class="card-title" style="font-family:Impact,sans-serif;">Valor Máximo del Bitcoin en el Mercado de Acuerdo a las Fechas.</h5>
+        <p class="card-text">Bitcoin, cuando se analiza con tiempo ves que parece ser mucho más fuerte, justo y 
+          poderoso para el usuario incluso que el dinero fiduciario de un país. <br>
+          Recordemos que un bitcoin es divisible, y tiene 100 millones de satoshis (su unidad más pequeña), 
+          pudiendo llegar un futuro donde equipararse 1 satoshi con 1 céntimo de euro y valer el millón de euros 
+          que anteriormente mencionamos, ¡pero ojo! Bitcoin funciona por consenso, y esa cantidad de decimales 
+          podría aumentarse si llegase a ser necesario y la mayoría de los nodos estuviese de acuerdo.</p>
+          <br>
+        <center>
+          <button class="boton" OnClick="location.href='/Pagomonedas'" type="button"> Ver Estadística </button>
+        </center>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

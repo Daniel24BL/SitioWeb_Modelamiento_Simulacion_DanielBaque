@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %} Pronosticos {% endblock %}
+{% block content %}
+<br><br>
+<div class="row">
+    <div class="col-sm-12text-center">
+        <center><h1 style="font-family:Impact,sans-serif;">Pronósticos: Modelos de pronóstico.</h1></center>
+    </div>
+</div>
+<hr>
+<br>
+
+<div class="card-deck">
+<center>
+    <div class="card cards" style="width: 60rem;">
+        <img src="{{ url_for('static', filename='promedio.png') }}" class="card-img-top" alt="Promedio Movil" height="250">
+        <div class="card-body" align="justify">
+            <h4 class="card-title" align="center">Modelo de Promedio Móvil</h4>
+            <p class="card-text">El método de pronóstico móvil se utiliza cuando se quiere dar más 
+                importancia a conjuntos de datos más recientes para obtener la previsión. Cada punto de una media 
+                móvil de una serie temporal es la media aritmética de un número de puntos consecutivos de la 
+                serie, donde el número de puntos es elegido de tal manera que los efectos estacionales y / o 
+                irregulares sean eliminados.</p>
+                <br>
+            <center>
+                <button class="boton" OnClick="location.href='/promedioMovil'" type="button">Utilizar Modelo  </button>
+            </center>
+        </div>
+    </div>
+</center>
+
+<br><br>
+
+<center>
+    <div class="card cards" style="width: 60rem;">
+        <img src="{{ url_for('static', filename='Suavizacionexponencial.png') }}" class="card-img-top"
+            alt="Suavizamiento Exponencial" height="250">
+        <div class="card-body" align="justify">
+            <h4 class="card-title" align="center">Modelo de Suavizamiento Exponencial</h4>
+            <p class="card-text"> La suavización exponencial es un método que posee un mecanismo de autocorrección 
+                que tiene la capacidad de adaptar los pronósticos en forma contraria a los errores del pasado. 
+                Se trata de promedios móviles ponderados de valores actuales y del pasado en donde las 
+                ponderaciones se disminuyen exponencialmente. De esta forma, este modelo puede llegar a precisar 
+                los datos del pronóstico y la demanda del último período, además del coeficiente de suavización.</p>
+            <center>
+                <button class="boton" OnClick="location.href='/suavizacionExponencial'" type="button"> Utilizar Modelo  </button>
+            </center>
+        </div>
+    </div>
+</center>
+
+<br><br>
+
+<center>
+    <div class="card cards" style="width: 60rem;">
+        <img src="{{ url_for('static', filename='Rlineal.png') }}" class="card-img-top" alt="Regresion Lineal" height="250">
+        <div class="card-body" align="justify">
+            <h4 class="card-title" align="center"> Modelo de Regresión Lineal</h4>
+            <p class="card-text">La regresión lineal es una técnica de modelado estadístico que se emplea para describir
+                una variable de respuesta continua como una función de una o varias variables predictoras. Puede ayudar
+                a comprender y predecir el comportamiento de sistemas complejos o a analizar datos experimentales,
+                financieros y biológicos. La regresión lineal cuenta con ciertas caracteríticas ideales para las
+                siguientes aplicaciones: Predicción o pronóstico y Fuerza de la regresión </p>
+            <center>
+                <button class="boton" OnClick="location.href='/regresionLineal'" type="button"> Utilizar Modelo </button>
+            </center>
+        </div>
+    </div>
+</center>
+
+<br><br>
+
+<center>
+    <div class="card cards" style="width: 60rem;">
+        <img src="{{ url_for('static', filename='Rcuadratica.png') }}" class="card-img-top" height="250"> 
+        <div class="card-body" align="justify">
+            <h4 class="card-title" align="center">Modelo de Regresión Cuadratica</h4>
+            <p class="card-text">El modelo de regresión cuadrática es una alternativa cuando el modelo lineal no logra
+                un coeficiente de determinación apropiado, o cuando el fenómeno en estudio tiene un comportamiento que
+                puede considerarse como parabólico. La forma más simple de tratar de establecer la tendencia es a través
+                de un diagrama de dispersión o nube de puntos. Ademas, Una regresión cuadrática es el proceso de
+                encontrar la ecuación de la parábola que mejor se ajuste</p>
+            <center>
+                <button class="boton" OnClick="location.href='/regresionCuadratica'" type="button">Utilizar Modelo </button>
+            </center>
+        </div>
+    </div>
+</center>
+
+<br>
+
+</div>
+
+{% endblock %}

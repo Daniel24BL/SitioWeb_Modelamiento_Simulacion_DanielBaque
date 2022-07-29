@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %} Montecarlo {% endblock %}
+{% block content %}
+
+<center>
+    <br>
+    <h1 style="font-family:Impact,sans-serif;"><strong>Simulación con el Método de Montecarlo</strong></h1>
+    <hr>
+
+
+    <div class="card cards text-center ">
+        <div class="card-header" style="font-family: Impact,sans-serif;">
+            <h4>¿Que es el Método de Simulación de Montecarlo?</h4>
+        </div>
+        <div class="card-body">
+            <p class="card-text" align="justify">La simulación de Monte Carlo, también conocida como el Método de Monte Carlo o una 
+                simulación de probabilidad múltiple, es una técnica matemática que se utiliza para estimar los 
+                posibles resultados de un evento incierto. El método de Monte Carlo fue inventado por John von 
+                Neumann y Stanislaw Ulam durante la Segunda Guerra Mundial para mejorar la toma de decisiones 
+                en condiciones de incertidumbre. Su nombre proviene de un conocido casino en Mónaco, ya que el 
+                elemento del azar es el núcleo del enfoque de modelado, similar a un juego de ruleta.
+            </p> 
+        </div>
+    </div>
+    <br>
+    <img src="../static/montecarlo.png" alt="montecarlo" height="250">
+    <br>
+    <hr>
+     
+    <div class="card-header" style="font-family:Impact,sans-serif;">
+        <h2>Probar el Método de Montecarlo</h2>
+    </div>
+
+    {% if error %}
+    <div class="alert alert-success" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    <br><br>
+    <div class="card " style="width: 55rem;"  >
+        <div class="card-body ">
+            <form enctype="multipart/form-data" method="POST" action="{{url_for('calcularMontecarlo')}}"><br>
+                <div class="col-sm-12">
+                    <div class="form-row">
+    
+                        <center><h3><strong>  1. Generador de Números Aleatorios.</strong></h3></center>
+                            <legend class="text-center header"><strong> Método Congruencial Lineal</strong></legend><br><br>
+                        <div class="col-md-6 mb-3">
+                            <br>
+                            <label for="validationDefault01">Ingrese la cantidad de iteraciones que desea realizar: (n)</label>
+                            <input name="numeroIteraciones" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Ingrese el valor de Semilla (X0)</label>
+                            <input name="semilla" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Ingrese el valor del Multiplicador (a)</label>
+                            <input name="multiplicador" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Ingrese el valor del Incremento (c)</label>
+                            <input name="incremento" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Ingrese el valor para el Módulo (m)</label>
+                            <input name="modulo" type="number" class="form-control" id="validationDefault01" required>
+                        </div><br>
+                        <center><h3><strong>  2. Simulación con el Método Montecarlo.</strong></h3></center>
+                        <legend class="text-center header"><strong>Subir archivo</strong></legend><br><br>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <input name="file" type="file" class="form-control-file form-data" id="exampleFormControlFile1"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationDefault01">Por Favor, Ingrese el Nombre para el columna X</label>
+                                <input name="x" type="text" class="form-control" id="validationDefault01"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationDefault01">Por Favor, Ingrese el Nombre para el columna Y</label>
+                                <input name="y" type="text" class="form-control" id="validationDefault01"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Seleccione el tipo de archivo que subió </label>
+                            <select name="tipoarchivo" required>
+                                <option value="">Seleccione</option>
+                                <option value="1">Excel</option> 
+                                <option value="2">csv </option> 
+                                <option value="3">json</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn boton " type="submit">Realizar simulación</button>
+                    <br><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</center>
+<br><br>
+{% endblock %}

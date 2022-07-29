@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} Regresión lineal {% endblock %}
+{% block content %}
+{% if imagen %}
+<center>
+    <br><br>
+    <h1 style="font-family:Impact,sans-serif;"><strong>Resultados de su Pronóstico con el Método de Regresión Lineal</strong></h1>
+    <hr>
+</center>
+<h3 style="font-family:Impact,sans-serif;"> Grafica Obtenida:</h3>
+<hr>
+
+<div class="card cards  mb-3">
+    <img src="data:image/png;base64,{{imagen}}" class="img-fluid rounded-start" alt="grafica">
+    <!-- <div class="card cards text-center ">
+        <div class="card-header" style="font-family: 'Lucida Sans';">
+            <h5>Grafica de Regresion Lineal:</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Regresion</p>
+        </div>
+    </div> -->
+</div>
+{% else %}
+<br><br>
+<center>
+    <h1 style="font-family:Impact,sans-serif;"><strong>Modelo de Regresión Lineal</strong></h1>
+    <hr>
+    {% if error %}
+    <div class="alert alert-success" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    <br><br>
+    <div class="card" style="width: 40rem;">
+        <div class="card-body">
+            <form action="/regresionLineal" method="post">
+                <div class="mb-3">
+                    <input type="text"   class="form-control" placeholder="Por Favor, Ingrese un Nombre para el eje X" name="xlbl" required >
+                </div>
+                <div class="mb-3">  <textarea  name="x"   rows="3" class="form-control" placeholder="Ingrese los datos para el eje X (solo numeros seperados por coma ,)" required ></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="text"  class="form-control"  placeholder="Por Favor, Ingrese un Nombre para el eje Y"   name="ylbl"  required>
+                </div>
+                <div class="mb-3">
+                    <textarea name="y"   rows="3" class="form-control" placeholder="Ingrese los datos para el eje Y (solo numeros seperados por coma ,)" required></textarea>
+                </div>
+                <button  type="submit" class="btn boton">Realizar Pronostico</button>
+            </form>
+        </div>
+    </div>
+</center>
+<br><br>
+    
+{% endif %}
+{% endblock %}

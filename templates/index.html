@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<br>
+<div class="container" >
+    <div class="card border-success bg-primary  mb-3">
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="nav-link" href="/">
+                <img src="{{ url_for('static', filename='principalfon.png') }}" style="width: 450px; height:90px"
+                    class="card-img-top" alt="Grafica por fecha">
+            </a>
+            <div>
+            <center>
+                <a class="navbar-brand" href="#">ANÁLISIS DEL BITCOIN
+                    <br>Universidad Laica Eloy Alfaro de Manabí 
+                </a>
+            </center>
+        </div>
+
+        </div>
+    </nav>
+    <br><br>
+
+    <div class="principal">
+
+        <div class="header">
+            <div >
+                <img src="{{ url_for('static', filename='Perfil.png') }}" style="width: 250px; height:290px"
+                    class="card-img-top" alt="Grafica por fecha">
+            </div>
+
+            <div class="nombre">
+                <h3>Autor:</h3>
+                <center><h2>Daniel Alexander Baque López</h2></center>
+                <br>
+                <p> <strong>Cel:</strong> 0978759152</p>
+                <p> <strong>Email:</strong> daniel-baque98@outlook.com</p>
+                <p> <strong>Tema:</strong> Criptomoneda Bitcoin</p>
+                <p><strong>Información:</strong> En la actualidad soy estudiante de la Facultad de Ciencias 
+                            Informáticas y me encuentro cursando la carrera de Tecnologías de Información y 
+                            Comunicación. </p>
+                            <hr>
+                            <br>
+            </div>
+        </div>
+        <center>
+        <button class="boton"  type="button"
+                            OnClick="window.open('https://drive.google.com/file/d/1OkWcLvKGU5TMGLUUgHPUMIAukJdubXol/view?usp=sharing')" 
+                            target="_blank"
+                            >Leer Manual de Usuario </button>
+        </center>
+        <br>
+
+    </div>
+        <br><br>
+        <center>
+            
+            <div class="nombre>"><h1>¿QUE ES EL BITCOIN?</h1></div> 
+            
+        </center>
+        <br>
+        <center>
+        <img src="{{ url_for('static', filename='informacionprin.png') }}" style="width: 900px; height:500px">
+        <br><br>
+        </center>
+    </div>
+
+    <br>
+
+
+    <div class="card cards text-center ">
+        <div class="card-header" style="font-family: Impact,sans-serif;">
+            <br>
+            <h1>El Bitcoin</h1>
+            <br>
+        </div>
+        <div class="card-body">
+            <p class="card-text" align="justify">En los últimos tiempos se ha visto un gran posicionamiento de las criptomonedas en la
+                economía mundial, estas representan un medio de pago seguro y eficiente. El Bitcoin por su
+                parte pertenece a la familia de las criptomonedas pues es una moneda virtual o un medio de
+                intercambio electrónico que sirve para adquirir productos y servicios; pero esta moneda es
+                descentralizada, es decir que no existe una autoridad o ente de control que sea responsable de
+                su emisión y registro de sus movimientos. Por todo lo antes mencionado, es que la predicción
+                de estas criptomonedas se han vuelto un tema de investigación de gran interés para las áreas de
+                la computación y las inversiones, dada su gran expansión y lo que podría significar la amplia
+                utilización a nivel mundial en los siguientes años. Este trabajo nace con el objetivo de realizar un
+                análisis al crecimiento y las variantes que a obtenido el valor de la criptomoneda Bitcoin en los
+                últimos años a través de datos estadísticos.
+            </p>
+        </div>
+
+    <br>
+        <center>
+            <img src="../static/bitcoinpresent.png" alt="inventario" width="600" height="300">
+            <br>
+        </center>
+        <br><br>
+
+    </div>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %} Numeros Aleatorios {% endblock %}
+{% block content %}
+<br><br>
+<div class="row">
+  <div class="col-sm-12text-center">
+    <center><h1 style="font-family:Impact,sans-serif;">Métodos para Generar Números Aleatorios.</h1></center>
+  </div>
+</div>
+<hr>
+
+<div class="card-deck" >
+  <center>
+  <div class="card cards" style="width: 60rem;">
+    <img src="{{ url_for('static', filename='cuadradosMedi.png') }}" class="card-img-top"  alt="Cuadrados Medios" height="250">
+    <div class="card-body"  align="justify"  >
+      <h5 class="card-title">Método de Cuadrados Medios</h5>
+
+        <p>Es un algoritmo no congruencial que fue propuesto en los años cuarenta del siglo XX por Von Neumann y 
+          Metrópolis. Este algoritmo necesita un número entero detonador también llamado “Semilla” con D dígitos, el 
+          cual es elevado al cuadrado para seleccionar del resultado los D dígitos del centro; el primer número Ri, 
+          es determinado anteponiendo el “0” a estos dígitos. El segundo Ri se obtiene con el mismo procedimiento, 
+          solo que en este se elevan al cuadrado los D dígitos del centro que se seleccionaron para obtener el primer Ri. 
+          Este método se repite hasta obtener n número Ri.</p>
+          <br>
+        <center>
+          <button class="boton" OnClick="location.href='/cuadradosMedios'" type="button">
+                  Generar Números Aleatorios</button>
+        </center>
+    </div>
+  </div>
+</center>
+
+<br><br>
+<center>
+  <div class="card cards" style="width: 60rem;">
+    <img src="{{ url_for('static', filename='CongruLineal.png') }}" class="card-img-top" alt="Congruencia lineal" height="250">
+    <div class="card-body" align="justify">
+      <h5 class="card-title">Método de Congruencia Lineal</h5>
+      <p class="card-text">El método congruencial lineal es una clase de algoritmos del generador de números 
+      pseudoaleatorios que se utilizan para generar secuencias de números similares al azar en un rango específico. 
+      Este método se puede definir como: <br>
+      Xi + 1 = a Xi + c * (mod * m)   <br> 
+      Dónde: <br>
+        - X, es la secuencia de números pseudoaleatorios. <br>
+        - m, (> 0) el módulo. <br>
+        - a, (0, m) el multiplicador. <br>
+        - c, (0, m) el incremento.
+        - X0, [0, m) Valor inicial de la secuencia conocido como semilla. <br>
+      "m", "a", "c" y "X0" deben elegirse apropiadamente para obtener un período casi igual a "m"</p>
+        <br>
+        <center>
+          <button class="boton" OnClick="location.href='/congruenciaLineal'" type="button"> 
+                  Generar Números Aleatorios</button>
+        </center>
+    </div>
+  </div>
+</center>
+
+<br><br>
+
+<center>
+  <div class="card cards" style="width: 60rem;">
+    <img src="{{ url_for('static', filename='CongMultiplicativo.png') }}" class="card-img-top" 
+      alt="Congruencia multiplicativo" height="250">
+    <div class="card-body" align="justify">
+      <h5 class="card-title">Método de Congruencia Multiplicativo</h5>
+      <p class="card-text">Es otro de los algoritmos utilizados para generar números pseudoaleatorios, 
+        se ha demostrado que este método se comporta aceptablemente desde el punto de vista estadístico. <br>
+        Tiene como base al algoritmo congruencia lineal donde: <br> 
+        - La elección de "m" debe hacerse mediante la relación: - m = 2^b , (b>2) para cumputadora binaria. <br>     
+        - Xn o sea el valor inicial o semilla deberá ser numero primo. <br> 
+        - En cuanto al valor de la constante "a" su valor podrá ser de números primos y además a < m. <br>
+      </p>
+      <br>
+        <center>
+          <button class="boton" OnClick="location.href='/congruencialMultiplicativo'" type="button"> 
+                  Generar Números Aleatorios</button>
+        </center>
+    </div>
+  </div>
+</center>
+
+    <br><br>
+
+<center>
+  <div class="card cards" style="width: 60rem;">
+    <img src="{{ url_for('static', filename='DistribucionPoisson.png') }}" class="card-img-top" height="250">
+    <div class="card-body" align="justify">
+    <h5 class="card-title">Distribuccion de Poisson </h5>
+    <br>
+    <p class="card-text">La distribución de Poisson es una distribución de probabilidad discreta y se emplea para 
+      describir procesos que pueden ser descritos con una variable aleatoria discreta. Describe situaciones en las 
+      cuales los clientes llegan de manera independiente durante un cierto intervalo de tiempo y el número de 
+      llegadas depende de la magnitud del intervalo. La distribución de Poisson juega un rol importante en 
+      complementar la distribución exponencial en la teoría de colas o modelo de líneas de espera.
+    </p>
+    <br>
+    <center>
+      <button class="boton" OnClick="location.href='/distribucionPoisson'" type="button">
+              Generar Números Aleatorios</button>
+    </center>
+  </div>
+</div>
+</center>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Análisis Frecuencia{% endblock %}
+{% block content %}
+<br>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h1 style="font-family:Impact,sans-serif;">Estadística de los Valores del Bitcoin en el Mercado.</h1>
+  </div>
+</div>
+<hr>
+<br>
+<div class="card border-secondary  mb-3">
+  <img src="data:image/png;base64,{{imagen2}}"  class="img-fluid rounded-start" alt="grafica">
+  <br><br>
+  <div class="card border-secondary  text-center">
+    <div class="border-secondary  card-header"  style="font-family:Impact,sans-serif;">
+      <br>
+      <h3>Frecuencia del Valor del Bitcoin en el Mercado.</h3>
+    </div>
+    <div class="card-body"  align="justify">
+        <p class="card-text">El valor de un Bitcoin lo determina todo aquel que quiera participar en su proceso de 
+          compraventa, en esencia sus usuarios. Aunque influyan múltiples factores, en última instancia, siempre 
+          determina su precio. El comercio de bitcoins permite distribuirlo y beneficiarse por ello. Como en otros 
+          escenarios, los productores (en el caso de Bitcoin: los mineros) pueden proponer un precio al vender sus 
+          bitcoins a los interesados llegando a acuerdos. Imagina los típicos tratos entre dos personas, una 
+          propone un precio y si la otra, entre regateos, está dispuesto a aceptarlo entonces se hace la 
+          transacción.</p>
+          <br><br>
+            <center>
+      <button class="boton" style="width: 300px;"  OnClick="location.href='/Analisis'" type="button">Regresar</button>
+    </center>
+    <br>
+    </div>
+  </div>
+  </div>
+{% endblock %}

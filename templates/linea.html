@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %} Linea de Espera {% endblock %}
+{% block content %}
+<center>
+    <br><br>
+    <h1 style="font-family:Impact,sans-serif;"><strong>Simulación con el Método de Linea de Espera</strong></h1>
+    <hr>
+</center>
+
+<div class="card cards text-center ">
+    <div class="card-header" style="font-family:Impact,sans-serif;">
+        <h4>¿Que es el Método de Simulación de Línea de Espera? </h4>
+    </div>
+    <div class="card-body">
+        <p class="card-text" align="justify">Una línea de espera es el efecto resultante en un sistema cuando la demanda de un
+            servicio supera la capacidad de proporcionar dicho servicio. Este sistema está formado por un conjunto
+            de entidades en paralelo que proporcionan un servicio a las transacciones que aleatoriamente entran al
+            sistema. Dependiendo del sistema que se trate, las entidades pueden ser cajeras, máquinas, semáforos,
+            grúas, etcétera, mientras que las transacciones pueden ser: clientes, piezas, autos, barcos, etcétera
+        </p>
+    </div>
+</div>
+<br>
+<center>
+    <img src="../static/lespera.png" alt="lespera" height="250">
+    <br>
+</center>
+<br>
+
+<hr>
+
+<div class="card cards text-center ">
+    <div class="card-header" style="font-family:Impact,sans-serif;">
+        <h4>Caso Practico con la Simulación de línea de Espera. </h4>
+    </div>
+    <div class="card-body">
+        <p class="card-text" align="justify">Una entidad bancaria considera la posibilidad de instalar una red de 
+            cajeros en una de sus oficinas. Dado que se desconoce la afluencia de público que va a demandar dicho 
+            servicio, coloca cajeros de prueba durante un mes. Diariamente se recogen datos sobre los tiempos de 
+            llegadas de los clientes, así como de los tiempos de servicio. Suponiendo que la sucursal se encuentra 
+            emplazada en un barrio dende no existe otro servicio semejante, el cliente que llega prefiere esperar 
+            a poder utilizar el cajero, cuando este está ocupado. Tras el oportuno análisis de los datos recogidos, 
+            se estima: (i) los tiempos de llegadas (ii) la distribución del tiempo de servicio; (iii) el tiempo 
+            medio transcurrido entre dos llegadas consecutivas es de 7.5 minutos; (iv) el tiempo medio de servicio 
+            es de 5 minutos por cliente. <br>
+            <strong> Calcula:</strong> <br>
+            a) Tiempo medio de espera que debe sufrir cada cliente en cola. <br>
+            b) Tamaño medio de la cola y probabilidad de que al acudir al cajero ya haya alguna persona en la cola.
+            <br>
+        </p>
+    </div>
+</div>
+<br><hr>
+<br>
+<h3 style="font-family:Impact,sans-serif;"> Datos Generados:</h3>
+<hr>
+<br>
+<center>
+<div class="card cards" style="width: 75rem;">
+    <div class="card-body">
+        <table class="dataTable table table-bordered table-hover">
+            <thead>
+                {% for c in df.columns %}
+                <th>{{ c }}</th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for i in df.iterrows() %}
+                <tr>
+                    <td>{{ i[1][0] }}</td>
+                    <td>{{ i[1][1] }}</td>
+                    <td>{{ i[1][2] }}</td>
+                    <td>{{ i[1][3] }}</td>
+                    <td>{{ i[1][4] }}</td>
+                    <td>{{ i[1][5] }}</td>
+                    <td>{{ i[1][6] }}</td>
+                    <td>{{ i[1][7] }}</td>
+                    <td>{{ i[1][8] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</center>
+<hr>
+
+<h3 style="font-family:Impact,sans-serif;"> Grafica Generada:</h3>
+<hr>
+<div class="card cards  mb-3">
+    <img src="data:image/png;base64,{{imagen}}" class="img-fluid rounded-start" alt="grafica">
+    
+</div>
+
+{% endblock %}

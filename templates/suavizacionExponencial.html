@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %} Suavización exponencial {% endblock %}
+{% block content %}
+{% if cargar %}
+<center>
+    <br><br>
+    <h1 style="font-family:Impact,sans-serif;"><strong>Resultados de su Pronóstico con el Método de Suavización Exponencial</strong></h1>
+    <hr>
+</center>
+<h3 style="font-family:Impact,sans-serif;">Datos Obtenidos:</h3>
+<hr>
+<br>
+<div class="card cards">
+    <div class="card-body">
+        <table class="dataTable table table-bordered table-hover">
+            <thead>
+                {% for i in datos.columns %}
+                <th>{{ i }}</th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for i in datos.iterrows() %}
+                <tr>
+                    <td>{{ i[1][0] }}</td>
+                    <td>{{ i[1][1] }}</td>
+                    <td>{{ i[1][2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<br><br>
+
+{% else %}
+<br><br>
+<center>
+    <h1 style="font-family:Impact,sans-serif;"><strong>Modelo de Suavización Exponencial</strong></h1>
+    <hr>
+    {% if error %}
+    <div class="alert alert-success" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    <br>
+    <div class="card" style="width: 40rem;">
+        <div class="card-body">
+            <form action="/suavizacionExponencial" method="POST">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Por Favor, Ingrese un Nombre para el eje X"  name="xlbl" required >
+                </div>
+                <div class="mb-3">
+                    <textarea  name="x"  rows="3" class="form-control"  placeholder="Ingrese los datos para el eje X (solo numeros seperados por coma ,)" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="text"   class="form-control"  placeholder="Por Favor, Ingrese un Nombre para el eje Y"   name="ylbl"  required >
+                </div>
+                <div class="mb-3">
+                    <textarea  name="y"   rows="3" class="form-control" placeholder="Ingrese los datos para el eje Y (solo numeros seperados por coma ,)"  required></textarea>
+                </div>
+                <button type="submit"  class="btn boton" >Realizar Pronostico</button>
+            </form>
+        </div>
+    </div>
+</center>
+<br><br><br>
+
+{% endif %}
+{% endblock %}
